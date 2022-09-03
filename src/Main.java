@@ -29,14 +29,33 @@ public class Main {
         listItems.add(secondItem);
         listItems.add(thirdItem);
         
+        //-------------------
+        //Collections only works with List and not with arraylist
+        List<Item> shoppingCart = new ArrayList<>(listItems);
+        //With this for loop we add x number of each element in the list
+        for (Item element : listItems) {
+            int randomNumber = getRandomNumber(0,3);
+            shoppingCart.addAll(Collections.nCopies(randomNumber, element));
+        }
+        //We print the content of the shopping cart
+        for (Item element : shoppingCart) {
+            System.out.print(element.getCode().toUpperCase()+", ");
+        }
+        //-------------------
+        
         Checkout atm = new Checkout();
-        //We scan each product and we add thr price of each one of them to the variable "totalPriceCart"
-        for(Item name : listItems){
+        //We scan each product and we add the price of each one of them to the variable "totalPriceCart"
+        for(Item name : shoppingCart){
             totalPriceCart =  totalPriceCart + atm.scanItem(name);
         }
         //We print the total amount to be paid
         System.out.println(" - Total: " + totalPriceCart+"$");
         
+    }
+    //min is inclusive and max is exclusive
+    public static int getRandomNumber(int min, int max) {
+        Random random = new Random();
+        return random.nextInt(max - min) + min;
     }
     
 }
