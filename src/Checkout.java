@@ -21,7 +21,7 @@ public class Checkout {
     }
     //Scan method
     public float scanItem(Item item){
-        //Id the item is voucher and the number of voucher items is not 0
+        //If the item is voucher and the number of voucher items is not 0
         if(item.getCode().equals("Voucher") && specialVoucher!=0){
             specialVoucher--;
             return  item.getPrice();

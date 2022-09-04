@@ -28,7 +28,8 @@ public class Main {
         listItems.add(firstItem);
         listItems.add(secondItem);
         listItems.add(thirdItem);
-        
+        //The first item of the cart is random
+        Collections.shuffle(listItems);
         //-------------------
         //Collections only works with List and not with arraylist
         List<Item> shoppingCart = new ArrayList<>(listItems);

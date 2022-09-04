@@ -36,7 +36,8 @@ public class Rules {
             return specialVoucher;
         }
     }
-    // Getter
+    // Getter --> number od voucher items taht we count 
+    //for the total price of the shopping cart
     public int getVoucherDiscount() {
         return specialVoucher;
     }
@@ -59,7 +60,7 @@ public class Rules {
         }
         
     }
-    // Getter
+    // Getter --> true if we do discount and false if not
     public boolean getTshirtDiscount() {
         return specialTshirt;
     }

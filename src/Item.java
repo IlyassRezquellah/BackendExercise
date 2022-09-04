@@ -19,11 +19,11 @@ public class Item {
         price = priceItem;
     }
     
-    // Getter
+    // Getter --> price of item
     public float getPrice() {
         return price;
     }
-    // Getter
+    // Getter --> code of item
     public String getCode() {
         return code;
     }
